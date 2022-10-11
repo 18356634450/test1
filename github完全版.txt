@@ -1,0 +1,49 @@
+git config --global user.name "18356634450"
+
+git config --global user.email "2495061772@qq.com"
+
+检查ssh：cd ~/.ssh
+
+没有就创建ssh，后面带上github账户的邮箱，创建之后连续3下enter：
+ssh-keygen -t rsa -C "2495061772@qq.com"
+
+创建完成之后，去 /c/Users/24950/.ssh/id_rsa.pub中查看ssh，记事本打开，全部复制，粘贴到github上，github的setting中新建ssh。
+
+git init
+
+git add .
+
+git commit -m "提交的注释或者记录"
+
+关联github仓库：
+到github text仓库复制仓库地址,ssh的地址
+
+将master转到main
+git branch -m master main
+
+git remote add origin git@github.com:18356634450/test.git
+
+git push -u origin main
+
+使用以下命令将HEAD指向main：
+git symbolic-ref refs / remotes / origin / HEAD refs / remotes / origin / main
+
+删除master分支（此处可以不写）
+git push origin --delete master
+
+问题：
+如果出现pull的错误提示：git pull origin main
+
+如果还出现refusing to merge unrelated histories:
+git pull origin main --allow-unrelated-histories
+
+如果弹出蓝色的文字框，则表示成功，这个文字框需要提交信息备注：
+按两下ESC，输入：**:wq**，（注意有冒号，这是UNIX保存的命令），回车
+
+此时，大概率没有问题了，可以将文件传到main中
+
+重复：
+git add .
+git commit -m "提交的注释或者记录"
+git push -u origin main
+

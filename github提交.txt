@@ -76,7 +76,5 @@ git symbolic-ref refs / remotes / origin / HEAD refs / remotes / origin / main
 
 （14）.git push origin --delete master
 
-（15）.
-
 //尝试上传到main里
 
