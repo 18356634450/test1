@@ -1,0 +1,82 @@
+提交流程：
+（1）.设置github的账号和邮箱。
+24950@NullMe MINGW64 ~/Desktop/test
+$ git config --global user.name "18356634450"
+
+24950@NullMe MINGW64 ~/Desktop/test
+$ git config --global user.email "2495061772@qq.com"
+
+（2）.检查ssh。
+24950@NullMe MINGW64 ~/Desktop/test
+$ cd ~/.ssh
+bash: cd: /c/Users/24950/.ssh: No such file or directory
+
+（3）.没有就创建ssh，后面带上github账户的邮箱，创建之后连续3下enter，默认无密码。
+24950@NullMe MINGW64 ~/Desktop/test
+$ ssh-keygen -t rsa -C "2495061772@qq.com"
+
+（4）.创建完成之后，去 /c/Users/24950/.ssh/id_rsa.pub中查看ssh，记事本打开，全部复制，粘贴到github上，github的setting中新建ssh。
+
+24950@NullMe MINGW64 ~/Desktop/test
+$ ssh-keygen -t rsa -C "2495061772@qq.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/24950/.ssh/id_rsa):
+Created directory '/c/Users/24950/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/24950/.ssh/id_rsa
+Your public key has been saved in /c/Users/24950/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:How2b7rTXl4ySExJBm/8RBZOJVq7fbmHHvMXwaHBOks 2495061772@qq.com
+The key's randomart image is:
++---[RSA 3072]----+
+|      ..o Boo    |
+|       = O o o . |
+|        B + . + .|
+|       * o E . + |
+|      + S + + o .|
+|     . = o . . + |
+|       .= + . = o|
+|      .o.o + . =.|
+|      o+. .   . o|
++----[SHA256]-----+
+
+（5）.创建本地仓库
+24950@NullMe MINGW64 ~/Desktop/test
+$ git init
+Initialized empty Git repository in C:/Users/24950/Desktop/test/.git/
+
+（6）.将所有文件添加到仓库
+24950@NullMe MINGW64 ~/Desktop/test (master)
+$ git add .
+
+（7）.执行指令：git commit -m "提交文件",  双引号内是提交注释。
+
+（8）. 关联github仓库
+到github text仓库复制仓库地址,ssh的地址
+
+（9）.上传前指定github仓库的地址
+24950@NullMe MINGW64 ~/Desktop/test (master)
+$ git remote add origin git@github.com:18356634450/test.git
+
+（10）.上传
+24950@NullMe MINGW64 ~/Desktop/test (master)
+$ git push -u origin master
+
+（11）.将master转到main
+git branch -m master main
+
+（12）.使用以下命令将新命名的main分支推送到GitHub(假设这是您的远程存储库)：
+
+git push -u origin main
+
+  (13）.使用以下命令将HEAD指向main：
+
+git symbolic-ref refs / remotes / origin / HEAD refs / remotes / origin / main
+
+（14）.git push origin --delete master
+
+（15）.
+
+//尝试上传到main里
+
